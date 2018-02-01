@@ -5,7 +5,7 @@ module Business
         class MobileNetworkLoanReport < BaseLoanReport
             
             # Initializes a new Mobile Network Loan report with the filename the report will be done with
-            def initialize(file_name, export_file='./Output.csv')
+            def initialize(file_name, export_file)
                 @file_name = file_name
                 @export_file = export_file
                 @report_summary = {}
@@ -64,7 +64,7 @@ module Business
             end
 
             def write_csv_report
-
+                @export_file ||= 'Output.csv'
                 FileOperation::Export::ExportCsv.new(@export_file, @report_summary).tap do |export|
                     export.process
                 end

@@ -1,7 +1,7 @@
 require_relative 'loader'
 
 report_path = ARGV[0]
-report_path ||= './spec/assets/Loans.csv'
+report_path ||= 'spec/assets/Loans.csv'
 
 output_path ||= ARGV[1]
 
