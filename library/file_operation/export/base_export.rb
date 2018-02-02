@@ -1,3 +1,4 @@
+require_relative '../base_file_operation'
 module FileOperation
     module Export
         class BaseExport < BaseFileOperation
